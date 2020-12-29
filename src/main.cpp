@@ -8,6 +8,7 @@
 #include "bell.h"
 #include "clock_bg.c"
 #include "clock_hand.h"
+#include "credentials.h"
 #include "time.h"
 
 std::vector<int> ringTime = {815,  900,  905,  950,  1015, 1100, 1105, 1150,
@@ -41,7 +42,7 @@ void setup() {
     strip.Begin();
     strip.ClearTo(blue);
     strip.Show();
-    WiFi.begin("<< YOUR SSID >>", "<< YOUR PASSWORD >>");
+    WiFi.begin(WIFI_SSID, WIFI_PASS);
     strip.ClearTo(black);
     strip.Show();
 
